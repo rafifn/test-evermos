@@ -5,13 +5,13 @@ export const state = () => ({
 })
 
 export const getters = {
-  getProducts: state => {
+  getProducts: (state) => {
     return state.products
   },
-  getCartTotal: state => {
+  getCartTotal: (state) => {
     return state.cartTotal
   },
-  getCartItems: state => {
+  getCartItems: (state) => {
     return state.cartItems
   },
 }
@@ -24,7 +24,7 @@ export const mutations = {
     state.cartTotal++
     if (state.cartItems.length) {
       const itemExists = state.cartItems.filter(
-        item => item.id === payload.id
+        (item) => item.id === payload.id
       )[0]
       if (itemExists) {
         itemExists.total++
@@ -41,9 +41,5 @@ export const actions = {
   async getProducts({ commit }) {
     const products = await this.$axios.$get('/products/')
     commit('updateProducts', products)
-  },
-  async getProductDetail({ commit }, id) {
-    const product = await this.$axios.$get(`/products/${id}/`)
-    return { product }
   },
 }

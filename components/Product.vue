@@ -19,7 +19,7 @@
 export default {
   name: 'Product',
   props: {
-    product_id: {
+    productId: {
       type: Number,
       default: 0,
     },
@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     handleProductClick() {
-      this.$router.push(`/product/${this.product_id}`)
+      this.$router.push(`/product/${this.productId}`)
     },
     formatCurrency(price) {
       return `Rp ${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')},-`
@@ -82,7 +82,7 @@ export default {
     .variants {
       position: absolute;
       border-radius: 100px;
-      background: #FFA800;
+      background: #ffa800;
       color: #fff;
       font-size: 12px;
       padding: 2px 14px;
