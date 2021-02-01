@@ -65,9 +65,10 @@ export default {
   transition: all ease 0.3s;
   z-index: 0;
   max-width: calc(100% / 5);
+  overflow: hidden;
   @include mqMax(767px) {
-    max-width: calc(100% / 2);
-    margin: 0 0 20px;
+    max-width: calc(100% / 2.1);
+    margin: 0 1px 10px;
   }
   &:hover {
     box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.2);
